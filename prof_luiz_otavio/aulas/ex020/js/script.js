@@ -5,6 +5,7 @@ function meuEscopo() {
     const pessoas = [];
 
     function recebeEventoForm (evento) {
+
         evento.preventDefault()
 
         const nome = form.querySelector('.nome');
@@ -12,7 +13,14 @@ function meuEscopo() {
         const peso = form.querySelector('.peso');
         const altura = form.querySelector('.altura');
 
-        const info = {
+        pessoas.push({
+            nome: nome.value,
+            sobrenome: sobrenome.value,
+            peso: peso.value,
+            altura: altura.value
+        });
+        /*const info = {
+
             name: nome.value,
             aftername: sobrenome.value,
             weight: peso.value,
@@ -31,10 +39,10 @@ function meuEscopo() {
             },
         
         };
-        info.fala();
-        
+        info.fala();*/
+        console.log(pessoas)
         const resultado = document.querySelector('.resultado')
-        resultado.innerHTML = `${pessoas[0]}, ${pessoas[1]}, ${pessoas[2]}kg e ${pessoas[3]}m`
+        resultado.innerHTML += `<p>${nome.value}, ${sobrenome.value}, ${peso.value}kg e ${altura.value}m</p>`
     }
 
     
