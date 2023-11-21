@@ -12,12 +12,7 @@ function escopoImc() {
         imcMath = parseFloat(imcMath.toFixed(1))
         console.log(imcMath);
 
-        if (imcMath === Infinity || imcMath === NaN || imcMath === 0) {
-            resultado.innerHTML = `<p>Você precisa preencher os dados.</p>`
-        } else if (peso.value === NaN) {
-            resultado.innerHTML = `<p>Você precisa preencher o peso.</p>`
-        }
-        else if (imcMath < 18.5){
+        if (imcMath < 18.5){
             resultado.innerHTML = `<p>Seu IMC é ${imcMath}, (Abaixo do Peso).</p>`
         } else if (imcMath >= 18 && imcMath <= 24.9) {
             resultado.innerHTML = `<p>Seu IMC é ${imcMath} (Peso Normal).</p>`
@@ -27,9 +22,11 @@ function escopoImc() {
             resultado.innerHTML = `<p>Seu IMC é ${imcMath} (Obesidade grau 1).</p>`
         } else if (imcMath >= 35 && imcMath <= 39.9) {
             resultado.innerHTML = `<p>Seu IMC é ${imcMath} (Obesidade grau 2).</p>`
-        } else if (imcMath >= 40) {
+        } else if (imcMath >= 40 && imcMath !== Infinity) {
             resultado.innerHTML = `<p>Seu IMC é ${imcMath} (Obesidade grau 3).</p>`
-        } 
+        } else if (imcMath === Infinity || imcMath === NaN || " ") {
+            resultado.innerHTML = `<p>Você precisa preencher os dados</p>`
+        }
     }
 
     form.addEventListener('submit', recebeForm);

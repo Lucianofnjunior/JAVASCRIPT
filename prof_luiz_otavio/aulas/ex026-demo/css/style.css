@@ -9,6 +9,7 @@ Fontes
 :root {
     --primary-color: rgb(232, 205, 156);
     --primary-color-darker: rgb(151, 109, 32);
+    --verde:  rgb(29, 208, 29);
 }
 
 * {
@@ -79,4 +80,10 @@ form button:hover {
 
 form button:active {
     background-color: rgb(236, 51, 82);
+}
+
+.resultado-final {
+    background-color: var(--verde);
+    font-size: 20px; 
+    width: 350px;
 }
